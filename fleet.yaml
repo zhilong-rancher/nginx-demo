@@ -1,0 +1,28 @@
+namespace: default
+targetCustomizations:
+- name: app-a
+  clusterSelector:
+    matchLabels:
+      app: a
+  yaml:
+    overlays:
+    # Refers to overlays/app-a folder
+    - app-a
+
+- name: app-b
+  clusterSelector:
+    matchLabels:
+      app: b
+  yaml:
+    # Refers to overlays/app-b folders
+    overlays:
+    - app-b
+
+- name: app-c
+  clusterSelector:
+    matchLabels:
+      app: c
+  yaml:
+    # Refers to overlays/app-b folders
+    overlays:
+    - app-c
